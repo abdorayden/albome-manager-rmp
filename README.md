@@ -54,3 +54,10 @@ Saved albums are stored as Lua data in:
 ```
 
 The plugin loads this module on startup and writes it when you choose **Save and Exit**. Track entries are file paths from the current playlist, so moving or deleting a music file can make a saved entry unavailable.
+
+## shared api
+
+plugin share instans of albome lib to other plugins, so they can use the same album data. The shared instance is available as `raymp.albome_manager_plugin.shared_albome` after the plugin is loaded. Other plugins can use it
+
+you can get it through raymp:onDataGet(function(data) end) tunnel
+
